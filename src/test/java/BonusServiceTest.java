@@ -45,4 +45,18 @@ class BonusServiceTest {
         assertEquals(expected, actual);
 
     }
+    @Test
+    void shouldCalculateForAnRegisteredAndOverLimit() {
+        BonusService service = new BonusService();
+
+        // подготавливаем данные:
+        long amount = 1_000_000_60;
+        boolean anregistered = true;
+        long expected = 500;
+
+        // вызываем целевой метод:
+        long actual = service.calculate(amount, anregistered);
+        assertEquals(expected, actual);
+
+    }
 }
